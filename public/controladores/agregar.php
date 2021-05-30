@@ -23,7 +23,7 @@ $sql = "INSERT INTO libro VALUES (null , '$nombre', '$isbn',
  '$numero')";
 
   if ($conn->query($sql) === TRUE) {
-  echo "<p>Se ha creado los datos personales correctamemte!!!</p>";
+  echo "<p>Se ha creado el libro</p>";
   echo "<a href='../vista/capitulo.php?isbn=$isbn'>Crear Capitulos</a>";
 
   } else {
