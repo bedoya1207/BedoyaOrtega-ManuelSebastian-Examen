@@ -5,7 +5,7 @@
 	<link href="../controladores/agregar.css" rel="stylesheet"/>
 	<title>Nuevo libro</title>
 </head>
-<body  style="text-align: center;"  >
+<body  style="text-align: center;" >
 
 
 	<form id="formulario01"  method="POST" action="../controladores/agregar.php" >

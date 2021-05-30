@@ -1,5 +1,5 @@
 function buscarPorAutor() {
-    var Autor = document.getElementById("Autor").value;
+    var Autor = document.getElementById("buscarnombre").value;
     
 
     if (Autor == "") {
@@ -21,7 +21,7 @@ function buscarPorAutor() {
     document.getElementById("informacion").innerHTML = this.responseText;
     }
     };
-    xmlhttp.open("GET","../../Controladores/Admin/Buscar.php?Autor="+Autor,true);
+    xmlhttp.open("GET","../../public/controladores/buscar.php?Autor="+Autor,true);
     xmlhttp.send();
     }
 

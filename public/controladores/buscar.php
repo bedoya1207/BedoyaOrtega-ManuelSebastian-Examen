@@ -1,6 +1,6 @@
 <?php
  //incluir conexión a la base de datos
- include "../../../Config/conexionBD.php";
+ include "../../config/conexionBD.php";
  $Autor = $_GET['Autor'];
 
  
@@ -10,8 +10,8 @@
  //$sql = "SELECT * FROM usuario WHERE usu_eliminado = 'N' and usu_cedula='$cedula'";
  //$sql2 = "SELECT * FROM telefono WHERE usu_cedula='$cedula'";
 
- $sql4 = "SELECT * FROM Capitulo c, autor a WHERE   c.autor_aut_codigo=a.aut_codigo and a.aut_nombre='$Autor'";
- u.usu_cedula=t.usu_cedula
+ $sql4 = "SELECT * FROM Capitulo c, autor a, libro l WHERE  c.libro_lib_codigo=l.lib_codigo and c.autor_aut_codigo=a.aut_codigo and a.aut_nombre='$Autor'";
+
  
 //cambiar la consulta para puede buscar por ocurrencias de letras
  //$result = $conn->query($sql);
@@ -22,15 +22,12 @@
  echo " <table style='width:100%','color: white'>
  <tr>
  <th>Nombre Libro</th>
- <th>Numero Capitulo</th>
- <th>Nombres</th>
- <th>Apellidos</th>
- <th>Telefono</th>
- <th>Tipo</th>
- <th>Operadora</th>
- <th></th>
- <th></th>
- <th></th>
+ <th>ISBN</th>
+ <th>Numero de paginas</th>
+ <th>Numero de Capitulo</th>
+ <th>Titulo Capitulo</th>
+ <th>Nombre Autor</th>
+ <th>Nacionalidad</th>
  </tr>";
  
  
@@ -38,13 +35,14 @@
  while($row1 = $result3->fetch_assoc()) {
 
  echo "<tr>";
- echo " <td>" . $row1['usu_cedula'] . "</td>";
- echo " <td>" . $row1['usu_correo'] . "</td>";
- echo " <td>" . $row1['usu_nombres'] . "</td>";
- echo " <td>" . $row1['usu_apellidos'] . "</td>";
- echo " <td>" . $row1['tel_numero'] . "</td>";
- echo " <td>" . $row1['tel_tipo'] . "</td>";
- echo " <td>" . $row1['tel_operadora'] . "</td>";
+ echo " <td>" . $row1['lib_nombre'] . "</td>";
+ echo " <td>" . $row1['lib_isbn'] . "</td>";
+ echo " <td>" . $row1['lib_num_paginas'] . "</td>";
+ echo " <td>" . $row1['cap_número'] . "</td>";
+ echo " <td>" . $row1['cap_titulo'] . "</td>";
+ 
+ echo " <td>" . $row1['aut_nombre'] . "</td>";
+ echo " <td>" . $row1['aut_nacionalidad'] . "</td>";
  echo "</tr>";
  
  }

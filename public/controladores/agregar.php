@@ -13,7 +13,7 @@
     
  <?php
  //incluir conexión a la base de datos
- include '../../Config/conexionBD.php';
+ include '../../config/conexionBD.php';
  $nombre = isset($_POST["nombre"]) ? trim($_POST["nombre"]) : null;
  $isbn = isset($_POST["isbn"]) ? trim($_POST["isbn"]) : null;
  $numero = isset($_POST["numerospag"]) ? trim($_POST["numerospag"]) : null;

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="../controladores/index.css" rel="stylesheet"/>
+    <script type="text/javascript" src="../../config/buscar.js"></script>
     <title>index Examen</title>
 </head>
 <body style="background-color: coral;">
@@ -31,8 +32,8 @@
                 </div>
                 <br>
                 
-                <input type="button" id="buscar" name="buscar" value="Buscar" onclick="">
-               
+                <input type="button" id="buscar" name="buscar" value="Buscar" onclick="buscarPorAutor()"  >
+                <div  id="informacion"><b></b></div>
             </form>
             <br>
             <button onclick="location.href='registrar.php'" style="margin-left: 2%;">Registrarse</button>
